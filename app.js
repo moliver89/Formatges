@@ -26,15 +26,6 @@ app.use(express.json());
 // Middleware que indica a Express dónde están las rutas.
 app.use('/api', userRoutes);
 
-app.use((req, res, next) => {
-    console.log('Se inicio');
-    next();
-});
-
-app.get('/', (req, res) => {
-    res.send('Bienvenido');
-});
-
 //Middleware de manejo de errores
 app.use((err, req, res, next) => {
     console.error(err);
@@ -46,7 +37,10 @@ app.use((err, req, res, next) => {
 
 // Middleware de ruta no encontrada
 app.use((req, res) => {
-    res.send('Ruta no encontrada');
+    res.status(404).send({
+        status: 'error',
+        message: 'Ruta no encontrada',
+    });
 });
 
 // Indicamos al servidor que escuche peticiones en un puerto dado.

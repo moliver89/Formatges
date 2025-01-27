@@ -79,10 +79,10 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 
 ## Endpoints del usuario
 
-- **POST** - [`/users/register`] - Crea un nuevo usuario pendiente de activar.
-- **PATCH** - [`/users/activate/:registrationCode`] - Activa a un usuario mediante un código de registro.
-- **POST** - [`/users/login`] - Logea a un usuario retornando un token.
-- **GET** - [`/users/profile`] - Retorna información privada del usuario con el id del token.
+- **POST** - [`/users/register`] - Crea un nuevo usuario pendiente de activar. ✅
+- **PATCH** - [`/users/activate/:registrationCode`] - Activa a un usuario mediante un código de registro. ✅
+- **POST** - [`/users/login`] - Logea a un usuario retornando un token. ✅
+- **GET** - [`/users/profile`] - Retorna información privada del usuario con el id del token. ✅
 - **PATCH** - [`/users/editProfile`] - Permite actualizar el perfil del usuario.
 - **PATCH** - [`/users/avatar`] - Permite actualizar el avatar del usuario.
 - **GET** - [`/users/ferias`] - Retorna las reservas del usuario.
@@ -94,10 +94,9 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 - **POST** - [`/feria/create`] - Crea una feria.
 - **PUT** - [`/feria/edit/:feriaId`] - Permite editar una feria.
 - **GET** - [`/feria/list`] - Retorna el listado de ferias.
-- **GET** - [`/feria/products`] - Retorna los eproducto filtrados con una palabra clave.
-- **GET** - [`/office/:idOffice`] - Retorna una feria en concreto por ID.
-- **GET** - [`/office/:idOffice/equipments`] - Retorna los productos de una feria.
-- **POST** - [`/office/:idOffice/booking`] - Permite reservar una oficina por ID. ✅
-- **PUT** - [`/office/:idOffice/booking/:idBooking`] - Permite al admin administrar las ferias.✅
+- **GET** - [`/feria/products`] - Retorna los productos filtrados con una palabra clave.
+- **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID.
+- **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
+- **PUT** - [`/office/:idOffice/booking/:idBooking`] - Permite al admin administrar las ferias.
 - **DELETE** - [`/office/:idOffice`] - Permite eliminar una feria en concreto por ID.
 - **DELETE** - [`/office/:idBooking/booking`] - Elimina una feria.
