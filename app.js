@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 // Importamos las dependencias
 import express from 'express';
+import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
 import cors from 'cors';
 // Importamos las rutas.
@@ -23,10 +24,14 @@ app.use(morgan('dev'));
 // Middleware que permite leer un body en formato JSON.
 app.use(express.json());
 
+// Middleware que permite leer un body en formato "form-data" (para archivos).
+app.use(fileUpload());
+
 // Middleware que indica a Express dónde están las rutas.
 app.use('/api', userRoutes);
 
 //Middleware de manejo de errores
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).send({

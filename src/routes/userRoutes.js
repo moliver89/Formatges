@@ -5,7 +5,9 @@ import {
     loginUserController,
     activateUserController,
     getUserProfileController,
+    userAvatarController,
 } from '../controllers/index.js';
+
 import authUserController from '../middlewares/authUserController.js';
 
 const router = express.Router();
@@ -20,6 +22,9 @@ router.patch('/users/activate/:registrationCode', activateUserController);
 router.post('/users/login', loginUserController);
 
 //Controlador que devuelve los datos de perfil del usuario.
-router.get('/users/profile/', authUserController, getUserProfileController);
+router.get('/users/profile', authUserController, getUserProfileController);
+
+//Controlador que actualiza el avatar del usuario.
+router.put('/users/edit/avatar', authUserController, userAvatarController);
 
 export default router;
