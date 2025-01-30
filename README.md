@@ -37,6 +37,7 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 | ----------- | ------------- | --------------------------------------- |
 | id          | INT UNSIGNED  | Identificador único de la entrada       |
 | name        | VARCHAR(255)  | Nombre de la feria                      |
+| year        | INT UNSIGNED  | Año de la feria                         |
 | type        | ENUM          | Tipo de feria("MEDIEVAL", "STAND", ETC) |
 | montaje     | DATETIME      | Fecha de montaje                        |
 | opening     | DATETIME      | Fecha de inicio                         |
@@ -84,10 +85,10 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 - **POST** - [`/users/login`] - Logea a un usuario retornando un token. ✅
 - **GET** - [`/users/profile`] - Retorna información privada del usuario con el id del token. ✅
 - **PATCH** - [`/users/editProfile`] - Permite actualizar el perfil del usuario.
-- **PATCH** - [`/users/avatar`] - Permite actualizar el avatar del usuario.
-- **GET** - [`/users/ferias`] - Retorna las reservas del usuario.
+- **PATCH** - [`/users/avatar`] - Permite actualizar el avatar del usuario. ✅
+- **GET** - [`/users/ferias`] - Retorna las ferias del usuario.
 - **PUT** - [`/users/password/recover`] - Permite enviar un email de recuperación de contraseña.
-- **PUT** - [`/users/password/reset/:recoverPassCode`] - Permite crear una nueva contraseña a partir de un código.
+- **PUT** - [`/users/password/reset/:recoverPassCode`] - Permite crear una nueva contraseña a partir de un código. ✅
 
 ## Endpoints de las ferias
 

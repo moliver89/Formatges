@@ -1,7 +1,7 @@
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 import bcrypt from 'bcrypt'; // Para encriptar contraseñas.
 import crypto from 'crypto'; // Modulo para generar valores aleatorios.
-import generateErrorUtil from '../utils/generateErrorUtil.js';
+import generateErrorUtil from '../../utils/generateErrorUtil.js';
 
 const newUserController = async (req, res, next) => {
     try {

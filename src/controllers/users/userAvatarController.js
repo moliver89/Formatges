@@ -1,9 +1,9 @@
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 
 // Importamos la funcion que guarda una foto en disco
-import savePhotoUtil from '../utils/savePhotoUtil.js';
-import removePhotoUtil from '../utils/removePhotoUtil.js';
-import generateErrorUtil from '../utils/generateErrorUtil.js';
+import savePhotoUtil from '../../utils/savePhotoUtil.js';
+import removePhotoUtil from '../../utils/removePhotoUtil.js';
+import generateErrorUtil from '../../utils/generateErrorUtil.js';
 
 const userAvatarController = async (req, res, next) => {
     try {
@@ -36,6 +36,12 @@ const userAvatarController = async (req, res, next) => {
 
         //Guardamos la foto en la carpeta uploads y obtenemos el nombre de la misma
         const avatarName = await savePhotoUtil(avatar, 100);
+
+        // Actualizamos los datos del usuario.
+        await pool.query(`UPDATE users SET avatar = ? WHERE id = ?`, [
+            avatarName,
+            req.user.id,
+        ]);
 
         res.status(201).send({
             status: 'ok',

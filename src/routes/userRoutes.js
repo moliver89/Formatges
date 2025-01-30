@@ -6,7 +6,8 @@ import {
     activateUserController,
     getUserProfileController,
     userAvatarController,
-} from '../controllers/index.js';
+    editUserProfileController,
+} from '../controllers/users/index.js';
 
 import authUserController from '../middlewares/authUserController.js';
 
@@ -26,5 +27,8 @@ router.get('/users/profile', authUserController, getUserProfileController);
 
 //Controlador que actualiza el avatar del usuario.
 router.put('/users/edit/avatar', authUserController, userAvatarController);
+
+//Controlador que permite editar los datos del usuario.
+router.put('/users/edit', authUserController, editUserProfileController);
 
 export default router;

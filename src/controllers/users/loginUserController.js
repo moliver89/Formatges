@@ -1,7 +1,7 @@
-import getPool from '../db/getPool.js';
+import getPool from '../../db/getPool.js';
 import bcrypt from 'bcrypt'; // Dependencia para comparar las contraseñas encriptadas.
 import jwt from 'jsonwebtoken'; // Dependecia para generar tokens JWT
-import generateErrorUtil from '../utils/generateErrorUtil.js';
+import generateErrorUtil from '../../utils/generateErrorUtil.js';
 
 const loginUserController = async (req, res, next) => {
     try {

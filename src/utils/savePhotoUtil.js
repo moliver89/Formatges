@@ -30,7 +30,7 @@ const savePhotoUtil = async (img, width) => {
         const imgPath = path.join(uploadsPath, imgName);
 
         // Guardamos la foto en la carpeta de subida de archivos.
-        await img.mv(imgPath);
+        await sharpImg.toFile(imgPath);
 
         // Retornamos el nombre con el que hemos guardado la imagen
         return imgName;

@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 // Importamos las rutas.
 import userRoutes from './src/routes/userRoutes.js';
+import feriaRoutes from './src/routes/feriaRoutes.js';
 
 // Creamos el servidor
 const app = express();
@@ -29,6 +30,7 @@ app.use(fileUpload());
 
 // Middleware que indica a Express dónde están las rutas.
 app.use('/api', userRoutes);
+app.use('/api', feriaRoutes);
 
 //Middleware de manejo de errores
 // eslint-disable-next-line no-unused-vars
