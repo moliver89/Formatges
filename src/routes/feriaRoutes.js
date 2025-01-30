@@ -1,6 +1,9 @@
 import express from 'express';
 
-import newFeriaController from '../controllers/ferias/index.js';
+import {
+    newFeriaController,
+    userFeriaListController,
+} from '../controllers/ferias/index.js';
 
 import authUserController from '../middlewares/authUserController.js';
 import authAdminController from '../middlewares/authAdminController.js';
@@ -14,5 +17,8 @@ router.post(
     authAdminController,
     newFeriaController,
 );
+
+// Controlador que devuelve la lista de ferias de un usuario por ID.
+router.get('/ferias/list', authUserController, userFeriaListController);
 
 export default router;

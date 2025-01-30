@@ -95,6 +95,7 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 - **POST** - [`/feria/create`] - Crea una feria.
 - **PUT** - [`/feria/edit/:feriaId`] - Permite editar una feria.
 - **GET** - [`/feria/list`] - Retorna el listado de ferias.
+- **GET** - [`/feria/list/:userId`] - Retorna el listado de ferias de un vendedor.
 - **GET** - [`/feria/products`] - Retorna los productos filtrados con una palabra clave.
 - **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID.
 - **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
