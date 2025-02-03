@@ -84,21 +84,19 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 - **PATCH** - [`/users/activate/:registrationCode`] - Activa a un usuario mediante un código de registro. ✅
 - **POST** - [`/users/login`] - Logea a un usuario retornando un token. ✅
 - **GET** - [`/users/profile`] - Retorna información privada del usuario con el id del token. ✅
-- **PATCH** - [`/users/editProfile`] - Permite actualizar el perfil del usuario.
+- **PATCH** - [`/users/edit`] - Permite actualizar el perfil del usuario. ✅
 - **PATCH** - [`/users/avatar`] - Permite actualizar el avatar del usuario. ✅
-- **GET** - [`/users/ferias`] - Retorna las ferias del usuario.
 - **PUT** - [`/users/password/recover`] - Permite enviar un email de recuperación de contraseña.
-- **PUT** - [`/users/password/reset/:recoverPassCode`] - Permite crear una nueva contraseña a partir de un código. ✅
+- **PUT** - [`/users/password/reset/:recoverPassCode`] - Permite crear una nueva contraseña a partir de un código.
 
 ## Endpoints de las ferias
 
-- **POST** - [`/feria/create`] - Crea una feria.
-- **PUT** - [`/feria/edit/:feriaId`] - Permite editar una feria.
+- **POST** - [`/feria/create`] - Crea una feria. ✅
+- **PUT** - [`/feria/edit/:feriaId`] - Permite editar una feria. ✅
 - **GET** - [`/feria/list`] - Retorna el listado de ferias.
-- **GET** - [`/feria/list/:userId`] - Retorna el listado de ferias de un vendedor.
+- **GET** - [`/feria/list/:userId`] - Retorna el listado de ferias de un vendedor. ✅
 - **GET** - [`/feria/products`] - Retorna los productos filtrados con una palabra clave.
-- **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID.
+- **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID. ✅
 - **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
 - **PUT** - [`/office/:idOffice/booking/:idBooking`] - Permite al admin administrar las ferias.
 - **DELETE** - [`/office/:idOffice`] - Permite eliminar una feria en concreto por ID.
-- **DELETE** - [`/office/:idBooking/booking`] - Elimina una feria.
