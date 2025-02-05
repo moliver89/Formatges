@@ -53,8 +53,9 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 | ----------- | ------------- | --------------------------------- |
 | id          | INT UNSIGNED  | Identificador único de la entrada |
 | name        | VARCHAR(255)  | Nombre del producto               |
-| type        | VARCHAR(255)  | Tipo de producto                  |
+| type        | ENUM          | Tipo de producto                  |
 | description | VARCHAR(255)  | Breve descripción                 |
+| sellingType | ENUM          | Forma de venta                    |
 | cost        | DECIMAL(10,2) | Costo del producto                |
 | price       | DECIMAL(10,2) | Precio al público                 |
 | stock       | INT UNSIGNED  | Stock del producto                |

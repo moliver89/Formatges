@@ -122,9 +122,9 @@ const editFeriaController = async (req, res, next) => {
         // Enviamos una respuesta al cliente.
         res.send({
             status: 'ok',
-            message: 'Oficina actualizada',
+            message: 'Feria actualizada',
             data: {
-                office: {
+                feria: {
                     name,
                     year,
                     type,
