@@ -75,8 +75,8 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 | Campo     | Tipo         | Descripción                                            |
 | --------- | ------------ | ------------------------------------------------------ |
 | id        | INT UNSIGNED | Identificador único de la foto                         |
-| idOffice  | INT UNSIGNED | Identificador de la entrada a la que pertenece la foto |
 | name      | VARCHAR(100) | Nombre de la foto                                      |
+| productId | INT UNSIGNED | Identificador de la entrada a la que pertenece la foto |
 | createdAt | DATETIME     | Fecha y hora de creación de la foto                    |
 
 ## Endpoints del usuario
@@ -106,9 +106,8 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 
 - **POST** - [`/products/create`] - Crea un producto. ✅
 - **PUT** - [`/products/edit/:productId`] - Permite editar un producto. ✅
-- **GET** - [`/products/list`] - Retorna el listado de productos.
+- **GET** - [`/products/list`] - Retorna el listado de productos. ✅
 - **GET** - [`/products/list/:userId`] - Retorna el listado de productos de un vendedor. ✅
-- **GET** - [`/feria/products`] - Retorna los productos filtrados con una palabra clave.
-- **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID. ✅
+- **GET** - [`/feria/:feriaId`] - Retorna un producto en concreto por ID. ✅
 - **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
 - **DELETE** - [`/product/:idProduct`] - Permite eliminar un producto en concreto por ID.

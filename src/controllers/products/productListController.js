@@ -4,6 +4,9 @@ import generateErrorUtil from '../../utils/generateErrorUtil.js';
 
 const productListController = async (req, res, next) => {
     try {
+        //Obtenemos los query params necesarios.
+        let { name, type } = req.query;
+
         // Obtenemos la conexión a la base de datos
         const pool = await getPool();
 
@@ -21,13 +24,18 @@ const productListController = async (req, res, next) => {
                 p.stock
             FROM products p 
             LEFT JOIN productphotos pp ON p.id = pp.productId
+            WHERE p.name LIKE ? AND p.type LIKE ?
             GROUP BY p.id
+
             `,
+            // Si "name" o "type" es undefined establecemos un string vacío. De lo contrario no
+            // figurará ninguna entrada como resultado.
+            [`%${name || ''}%`, `%${type || ''}%`],
         );
 
         // Si no hay ningun producto lanzamos un error
         if (products.length < 1) {
-            generateErrorUtil('No hay productos en este momento', 401);
+            generateErrorUtil('Producto no encontrado', 401);
         }
 
         // Si hay entradas buscamos las fotos de cada entrada.
