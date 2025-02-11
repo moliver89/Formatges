@@ -101,3 +101,14 @@ Portal para control de stock y venta en mercados con asignacion de genero.
 - **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
 - **PUT** - [`/office/:idOffice/booking/:idBooking`] - Permite al admin administrar las ferias.
 - **DELETE** - [`/office/:idOffice`] - Permite eliminar una feria en concreto por ID.
+
+## Endpoints de los productos
+
+- **POST** - [`/products/create`] - Crea un producto. ✅
+- **PUT** - [`/products/edit/:productId`] - Permite editar un producto. ✅
+- **GET** - [`/products/list`] - Retorna el listado de productos.
+- **GET** - [`/products/list/:userId`] - Retorna el listado de productos de un vendedor. ✅
+- **GET** - [`/feria/products`] - Retorna los productos filtrados con una palabra clave.
+- **GET** - [`/feria/:feriaId`] - Retorna una feria en concreto por ID. ✅
+- **GET** - [`/feria/:feriaId/products`] - Retorna los productos de una feria.
+- **DELETE** - [`/product/:idProduct`] - Permite eliminar un producto en concreto por ID.

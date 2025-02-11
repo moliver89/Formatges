@@ -4,6 +4,7 @@ import express from 'express';
 import {
     newProductController,
     editProductController,
+    productListController,
 } from '../controllers/products/index.js';
 
 // Importamos los middleware de autorización.
@@ -27,5 +28,8 @@ router.put(
     authAdminController,
     editProductController,
 );
+
+// Controlador que devuelve la lista de productos.
+router.get('/products/list', productListController);
 
 export default router;
