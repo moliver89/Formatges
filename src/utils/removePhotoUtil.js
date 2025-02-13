@@ -11,6 +11,7 @@ const removePhotoUtil = async (imgName) => {
             process.env.UPLOADS_DIR,
             imgName,
         );
+        console.log(process.cwd());
 
         try {
             // Intentamos acceder al archivo que queremos eliminar.

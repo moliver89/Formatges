@@ -6,6 +6,7 @@ import {
     editProductController,
     productListController,
     getProductByIdController,
+    deleteProductController,
 } from '../controllers/products/index.js';
 
 // Importamos los middleware de autorización.
@@ -35,5 +36,13 @@ router.get('/products/list', productListController);
 
 // Controlador que devuelve un producto por ID.
 router.get('/products/:productId', getProductByIdController);
+
+// Controlador que elimina un producto.
+router.delete(
+    '/products/delete/:productId',
+    authUserController,
+    authAdminController,
+    deleteProductController,
+);
 
 export default router;
