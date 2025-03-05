@@ -1,7 +1,19 @@
+import { NavLink } from 'react-router-dom';
+
 const Header = () => {
   return (
     <header>
-      <h1>Lord del Formatge</h1>
+      <div className='header-top'>
+        <NavLink to='/'>
+          <img src='/logo-header.jpg' alt='Logo Lord del Formatge' />
+        </NavLink>
+        <h1>Lord del Formatge</h1>
+      </div>
+      <nav>
+        <NavLink to='/register'>Registrarse</NavLink>
+        {' | '}
+        <NavLink to='/login'>Login</NavLink>
+      </nav>
     </header>
   );
 };
