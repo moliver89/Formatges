@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 // Importamos los estilos
 import '../index.css';
 // Importamos los componentes
@@ -13,6 +14,12 @@ const App = () => {
   return (
     <>
       <Header />
+      <Toaster
+        position='top-center'
+        toastOptions={{
+          duration: 4000,
+        }}
+      />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='*' element={<NotFoundPage />} />

@@ -11,7 +11,6 @@ const Header = () => {
       </div>
       <nav>
         <NavLink to='/register'>Registrarse</NavLink>
-        {' | '}
         <NavLink to='/login'>Login</NavLink>
       </nav>
     </header>
